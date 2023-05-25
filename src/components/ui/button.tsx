@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Loader } from "./loader";
 import { Slot } from "@radix-ui/react-slot";
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -33,13 +34,22 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  isLoading?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, disabled, asChild = false, isLoading, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
-      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        disabled={isLoading || disabled}
+        ref={ref}
+        {...props}
+      >
+        {isLoading && <Loader />}
+        {children}
+      </Comp>
     );
   }
 );

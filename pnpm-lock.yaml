@@ -1,9 +1,15 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@hookform/resolvers':
+    specifier: ^3.1.0
+    version: 3.1.0(react-hook-form@7.43.9)
   '@prisma/client':
     specifier: ^4.14.1
     version: 4.14.1(prisma@4.14.1)
+  '@radix-ui/react-label':
+    specifier: ^2.0.1
+    version: 2.0.1(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-slot':
     specifier: ^1.0.1
     version: 1.0.1(react@18.2.0)
@@ -34,6 +40,9 @@ dependencies:
   eslint-config-next:
     specifier: 13.4.3
     version: 13.4.3(eslint@8.41.0)(typescript@5.0.4)
+  formik:
+    specifier: ^2.2.9
+    version: 2.2.9(react@18.2.0)
   lucide-react:
     specifier: ^0.221.0
     version: 0.221.0(react@18.2.0)
@@ -49,6 +58,9 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  react-hook-form:
+    specifier: ^7.43.9
+    version: 7.43.9(react@18.2.0)
   tailwind-merge:
     specifier: ^1.12.0
     version: 1.12.0
@@ -64,6 +76,9 @@ dependencies:
   zod:
     specifier: ^3.21.4
     version: 3.21.4
+  zod-formik-adapter:
+    specifier: ^1.2.0
+    version: 1.2.0(formik@2.2.9)(zod@3.21.4)
 
 devDependencies:
   prisma:
@@ -119,6 +134,14 @@ packages:
   /@eslint/js@8.41.0:
     resolution: {integrity: sha512-LxcyMGxwmTh2lY9FwHPGWOHmYFCZvbrFCBZL4FzSSsxsRPuhrYUg/49/0KDfW8tnIEaEHtfmn6+NPN+1DqaNmA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: false
+
+  /@hookform/resolvers@3.1.0(react-hook-form@7.43.9):
+    resolution: {integrity: sha512-z0A8K+Nxq+f83Whm/ajlwE6VtQlp/yPHZnXw7XWVPIGm1Vx0QV8KThU3BpbBRfAZ7/dYqCKKBNnQh85BkmBKkA==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.43.9(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.8:
@@ -328,6 +351,30 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.5
       react: 18.2.0
+    dev: false
+
+  /@radix-ui/react-label@2.0.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-qcfbS3B8hTYmEO44RNcXB6pegkxRsJIbdxTMu0PEX0Luv5O2DvTIwwVYxQfUwLpM88EL84QRPLOLgwUSApMsLQ==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.21.5
+      '@radix-ui/react-primitive': 1.0.2(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@radix-ui/react-primitive@1.0.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-zY6G5Qq4R8diFPNwtyoLRZBxzu1Z+SXMlfYpChN7Dv8gvmx9X3qhDqiLWvKseKVJMuedFeU/Sa0Sy/Ia+t06Dw==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.21.5
+      '@radix-ui/react-slot': 1.0.1(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@radix-ui/react-slot@1.0.1(react@18.2.0):
@@ -829,6 +876,11 @@ packages:
 
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
+    dev: false
+
+  /deepmerge@2.2.1:
+    resolution: {integrity: sha512-R9hc1Xa/NOBi9WRVUWg19rl1UB7Tt4kuPd+thNJgFZoxXsTz7ncaPaeIm+40oSGuP33DfMb4sZt1QIGiJzC4EA==}
+    engines: {node: '>=0.10.0'}
     dev: false
 
   /default-browser-id@3.0.0:
@@ -1368,6 +1420,21 @@ packages:
       is-callable: 1.2.7
     dev: false
 
+  /formik@2.2.9(react@18.2.0):
+    resolution: {integrity: sha512-LQLcISMmf1r5at4/gyJigGn0gOwFbeEAlji+N9InZF6LIMXnFNkO42sCI8Jt84YZggpD4cPWObAZaxpEFtSzNA==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      deepmerge: 2.2.1
+      hoist-non-react-statics: 3.3.2
+      lodash: 4.17.21
+      lodash-es: 4.17.21
+      react: 18.2.0
+      react-fast-compare: 2.0.4
+      tiny-warning: 1.0.3
+      tslib: 1.14.1
+    dev: false
+
   /fraction.js@4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
@@ -1563,6 +1630,12 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
+    dev: false
+
+  /hoist-non-react-statics@3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+    dependencies:
+      react-is: 16.13.1
     dev: false
 
   /human-signals@2.1.0:
@@ -1884,8 +1957,16 @@ packages:
       p-locate: 5.0.0
     dev: false
 
+  /lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
+
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: false
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
   /loose-envify@1.4.0:
@@ -2347,6 +2428,19 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-fast-compare@2.0.4:
+    resolution: {integrity: sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==}
+    dev: false
+
+  /react-hook-form@7.43.9(react@18.2.0):
+    resolution: {integrity: sha512-AUDN3Pz2NSeoxQ7Hs6OhQhDr6gtF9YRuutGDwPQqhSUAHJSgGl2VeY3qN19MG0SucpjgDiuMJ4iC5T5uB+eaNQ==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
@@ -2692,6 +2786,10 @@ packages:
       any-promise: 1.3.0
     dev: false
 
+  /tiny-warning@1.0.3:
+    resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
+    dev: false
+
   /titleize@3.0.0:
     resolution: {integrity: sha512-KxVu8EYHDPBdUYdKZdKtU2aj2XfEx9AfjXxE/Aj0vT06w2icA09Vus1rh6eSu1y01akYg6BjIK/hxyLJINoMLQ==}
     engines: {node: '>=12'}
@@ -2856,6 +2954,16 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  /zod-formik-adapter@1.2.0(formik@2.2.9)(zod@3.21.4):
+    resolution: {integrity: sha512-62U+Mf8U05pvLsIMUTC1H6d4K5SmsrXM+YgiZhCpPin5GNhnVuXCGySmJCs0FHuTJCBy7Et5Z1i8KF5ffuLttg==}
+    peerDependencies:
+      formik: ^2.2.9
+      zod: ^3.14.4
+    dependencies:
+      formik: 2.2.9(react@18.2.0)
+      zod: 3.21.4
     dev: false
 
   /zod@3.21.4:
