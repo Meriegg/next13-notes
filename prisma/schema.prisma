@@ -11,8 +11,12 @@ datasource db {
 }
 
 model Note {
-  id      String @id @default(cuid())
-  content String
+  id        String    @id @default(cuid())
+  content   String
+  title     String?
+  isPublic  Boolean   @default(false)
+  createdOn DateTime  @default(now())
+  updatedOn DateTime?
 
   @@map("note")
 }
